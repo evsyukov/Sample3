@@ -1,1 +1,3 @@
-python app.py > /dev/null 2>&1 &
+mkdir -p /mylogs/
+touch /mylogs/test.txt
+python /web/app.py > /mylogs/test.txt 2>&1 &
