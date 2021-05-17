@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+        - curl -O https://bootstrap.pypa.io/pip/3.4/get-pip.py
+        - python3 get-pip.py
+        - python3 -m pip install -r requirements.txt
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Python code...
+      - python3 tests.py
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - app.py
+    - appspec.yml
+    - requirements.txt
+    - templates/base.html
+    - templates/index.html
+    - scripts/init.sh
+    - scripts/start.sh
+    - scripts/shutdown.py
+    - scripts/requirements.txt
